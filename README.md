@@ -1,9 +1,24 @@
-# -Training-Room-GNU-Make-
+# ![_Training_Room_GNU_Make](/home/fefeto/git/-Training-Room-GNU-Make-/Images/Github/_Training_Room_GNU_Make.png)
+
+
+
 
 
 ![Stop, StudyArea](/home/fefeto/git/-Training-Room-GNU-Make-/Images/Github/Stop, StudyArea.png)
 
-​	Esse repositorio tem como intuito o estudo 
+​	
+
+*Lembrar de passar tudo para o ingles*
+
+
+
+
+
+
+
+
+
+Esse repositorio tem como intuito o estudo 
 
 
 
