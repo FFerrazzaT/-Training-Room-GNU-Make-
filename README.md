@@ -1,68 +1,40 @@
-# ![_Training_Room_GNU_Make](/home/fefeto/git/-Training-Room-GNU-Make-/Images/Github/_Training_Room_GNU_Make.png)
 
 
 
 
-
-![Stop, StudyArea](/home/fefeto/git/-Training-Room-GNU-Make-/Images/Github/Stop, StudyArea.png)
-
-​	
-
-*Lembrar de passar tudo para o ingles*
+#### Repository to train and consult makefile programs 
 
 
 
+## Why use makefile
+
+They can be used to compile programs, install programs, build shared and static libraries.
 
 
 
+## Running makefile programs
 
-
-
-Esse repositorio tem como intuito o estudo 
-
-
-
-Repository to train and consult makefile programs 
-
-
-
-## Porque usar makefile
-
-Eles podem ser uzados para compilar programas, instalar programas, construir bibliotecas compartilhadas e estaticas
-
-
-
-## Rodando programas makefile
-
-### Rodando programa sem parametros
+### Running program without parameters
 
 ```bash
 ~$ make
 ```
 
-​	Esse comando será rodado em seu terminal bash e buscará o arquivo makefile em sua pasta de origem.
+This command will run on your bash terminal and fetch the makefile file in your source folder.
 
 
 
-### Rodando programa com parametros
+### Running program with parameters
 
 ```bash
 ~$ make target
 ```
 
-​	Esse comando será rodado em seu terminal bash e buscará o arquivo makefile em sua pasta de origem, rodando a partir do alvo solicitado.
+This command will be run on your bash terminal and fetch the makefile file in your source folder, running from the requested target.
 
 
 
-
-
-
-
-## Modelo basico da linguagem
-
-
-
-
+## Basic language model
 
 ```makefile
 Target:		Dependency(Optional)
@@ -74,7 +46,39 @@ Target:		Dependency(Optional)
 
 
 
+### Tags
 
+-n : Shows all commands without running the program (great for debugging)
+
+-c <File>: Compile the file
+
+-o <File>: Directs the output to the selected file
+
+-J <Folder>: Directs .mod to selected directory
+
+-I <Folder>: Search modules in directory
+
+
+
+### Compiling program
+
+```makefile
+Target:		Source Code File
+			(...)
+			Build instruction 
+			Comand 2
+			(...)
+```
+
+
+
+### Special Items
+
+@: Always when using an @ in front of a command, a silent command will be executed, where the make file will not show the command that will be performed.
+
+
+
+### Hello World
 
 ```makefile
 all:		
@@ -82,6 +86,8 @@ all:
 ```
 
 
+
+### Calling module
 
 ```makefile
 all:	mensage
@@ -91,7 +97,7 @@ mensage:
 		@echo "A new world"
 ```
 
-
+if not called, the module will not run
 
 ```makefile
 all:	mensage
@@ -101,62 +107,26 @@ mensage:
 		@echo "A new world"
 
 mensage2:
-		@echo "esse comando não irá rodar por não ser conectado com nenhum outro"
-```
-
-tags
-
--n : Mostra todos os comandos sem executar o programa (otimo para depuração)
-
--c <Arquivo>: Compilar o  arquivo
-
--o <Arquivo>: Direciona a saida para o arquivo selecionado
-
--J <Diretorio>: Direciona o .mod para o diretorio selecionado
-
--I <Diretorio>: Busca modulos em diretorio
-
-
-
-Itens Especiais
-
-
-
-@: Semper ao se usar um @ na frente de um comando, será executado um comando silencioso, onde o arquivo make não mostrará o comando que será realizado.
-
-Execução do hello world sem @
-
-
-
-Execução do hello world com @
-
-
-
-Compilando programa
-
-```makefile
-Target:		Arquivo de Codigo fonte
-			(...)
-			Instruçao de compilação
-			Comand 2
-			(...)
+		@echo "this command will not run because it is not connected with any other"
 ```
 
 
 
+### Arbitrary targets
 
+To have a standardization in the writing of make files, we can use some standard targets to facilitate reading:
 
-Alvos arbitrarios
-
-Para possuirmos uma padronização na escrita dos make files, podemos utilizar alguns alvos padrões para facilitar a leitura:
-
-Alvo Clean
-
-Quando existe esse alvo todos os arquivos escritos ali serão apagados ao final da execução do makefile
+NOTE: These targets are only intended to standardize the code, you can use other target names if you prefer
 
 
 
+#### Target Clean
+
+When there is this target all files written there will be deleted at the end of the makefile run
 
 
-OBS: Esses alvos apenas tem como intuito padronizar o codigo, voce pode utilizar outros nomes de alvo se preferir
+
+#### Target All
+
+Will run only with the make command
 
