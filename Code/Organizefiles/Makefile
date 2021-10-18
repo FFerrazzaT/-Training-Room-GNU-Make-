@@ -11,6 +11,6 @@ all: ./bin/program.x
 	@gfortran -c ./src/lib.f90 -J ./mod -o ./obj/lib.o
 
 clean:
-	@rm ./obj/*.o
-	@rm ./mod/*.mod
-	@rm ./bin/*.x
+	@rm -rf ./obj
+	@rm -rf ./mod
+	@rm -rf ./bin
