@@ -8,10 +8,13 @@
 
 
 
-#### Repository to train and consult makefile programs 
+Repository to train and consult makefile programs 
 
 
 <div align="left">
+[TOC]
+
+
 
 ## Why use makefile
 
@@ -135,22 +138,82 @@ gfortran -c $(SRC)/program.f90
 
 
 
+### Conditional IF
+
+```makefile
+equal:
+ifeq ( Item to compare, Variable ) 
+		(...)
+		Command 1 
+		Command 2
+		(...)
+else
+		(...)
+		Command
+		(...)
+endif
+
+different:
+ifneq ( Item to compare, Variable ) 
+		(...)
+		Command 1 
+		Command 2
+		(...)
+else
+		(...)
+		Command
+		(...)
+endif
+```
+
+
+
+### Function
+
+To define a function, you must use define, ending with endef. To call it, just type call.
+
+```makefile
+define FUNCTION
+	(...)
+	Command
+	(...)
+endef
+
+#Start of program
+all:
+	$(call FUNCTION)
+```
+
+
+
+### Wildcard
+
+Allows the use of * in commands (All command), so it is allowed to change the extension of the files.
+
+```makefile
+#Exemple
+
+SRC = $(wildcard ./src/*.f90)
+
+#Changing .f90 for .o
+
+OBJ = $(SRC:.f90=.o)
+```
+
+
+
 ### Tags
 
+```reStructuredText
 -n : Shows all commands without running the program (great for debugging)
 
--c <File>: Compile the file
-
--o <File>: Directs the output to the selected file
-
--J <Folder>: Directs .mod to selected directory
-
--I <Folder>: Search modules in directory
+```
 
 
 
 ### Special Items
 
+```reStructuredText
 @: Always when using an @ in front of a command, a silent command will be executed, where the make file will not show the command that will be performed.
 
 #: Make a comment.
@@ -165,3 +228,9 @@ $@: Target.
 
 %.o: Any .o in the target or dependency.
 
+addprefix <Text>: adds text at the beginning of a file (e.g. folder/, prog1.f90 will turn folder/prog1.f90).
+
+addsuffix<Text>: adds text at the end of a file (ex:.x, prog1.f90 will turn prog1.f90.x).
+
+( : )<Text>: allows you to change the chosen item.
+```
