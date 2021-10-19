@@ -12,9 +12,6 @@ Repository to train and consult makefile programs
 
 
 <div align="left">
-[TOC]
-
-
 
 ## Why use makefile
 
@@ -122,8 +119,8 @@ When there is this target all files written there will be deleted at the end of 
 
 Will run only with the make command
 
-
-
+-----
+	
 ### Variables
 
 To make it easier to rewrite if necessary, you can assign important items (usually folder locations) to a global wide range.
